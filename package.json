@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "build": "pkg . -t win -o ./build/music_indexer"
+    "start": "nodemon ./index.js",
+    "build": "pkg . -t linux -o ./build/Tiny_fileServer"
   },
   "dependencies": {
     "morgan": "^1.10.0",

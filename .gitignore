@@ -1,4 +1,5 @@
 node_modules/
 upload/
+build/
 config.js
 logger.log
