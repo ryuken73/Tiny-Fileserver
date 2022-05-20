@@ -4,8 +4,9 @@ const restify = require('restify');
 const morgan = require('morgan');
 const errors = require('restify-errors')
 const corsMiddleware = require('restify-cors-middleware');
+const config = require('./config.json');
 
-const outPath = './upload';
+const {PORT=7000, OUT_PATH='./upload'} = config;
 
 const loggerConfig = {};
 const {notification={}, logLevel="DEBUG", logFile="logger.log"} = loggerConfig;
@@ -32,7 +33,7 @@ server.use(restify.plugins.queryParser());
 
 server.post('/sendFile/:fname', (req, res) => {
   logger.info(req.url);
-  const targetFile = path.join(outPath, req.params.fname);
+  const targetFile = path.join(OUT_PATH, req.params.fname);
   const wStream = fs.createWriteStream(targetFile);
   logger.info(`inFile = ${req.params.fname} outFile = ${targetFile}`);
   req.pipe(wStream);
@@ -74,7 +75,8 @@ server.on('restifyError', function (req, res, err, cb) {
   return cb();
 });
 
-server.listen(7000, () => {
+server.listen(PORT, () => {
+  logger.info(`outPath = ${OUT_PATH}`);
   logger.info(`listening ${server.name}: ${server.url}`);
 });
 
