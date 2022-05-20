@@ -4,7 +4,7 @@ const restify = require('restify');
 const morgan = require('morgan');
 const errors = require('restify-errors')
 const corsMiddleware = require('restify-cors-middleware');
-const config = require('./config.json');
+const config = require(`${process.cwd()}/config.json`);
 
 const {PORT=7000, OUT_PATH='./upload'} = config;
 
