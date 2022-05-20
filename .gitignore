@@ -1,0 +1,4 @@
+node_modules/
+upload/
+config.js
+logger.log

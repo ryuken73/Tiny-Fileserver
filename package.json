@@ -1,0 +1,14 @@
+{
+  "name": "tiny_fileserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.5",
+    "restify": "^8.6.1",
+    "restify-cors-middleware": "^1.1.1",
+    "restify-errors": "^8.0.2",
+    "tracer": "^1.1.5"
+  }
+}
