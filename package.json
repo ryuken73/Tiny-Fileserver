@@ -7,6 +7,7 @@
     "start": "nodemon ./index.js",
     "build": "pkg . -t linux -o ./build/Tiny_fileServer"
   },
+  "bin": "./index.js",
   "dependencies": {
     "morgan": "^1.10.0",
     "nodemailer": "^6.7.5",
